@@ -12,6 +12,12 @@ class ProductsRegistrar extends BaseRegistrar
      */
     public function register(): void
     {
-        $this->get("/products", ProductsController::class . "@index");
+        $this->rest([
+            "std:index" => null,
+            "std:post" => "scope:products:write",
+            "std:get" => null,
+            "std:patch" => "scope:products:write",
+            "rel:get:stocks" => null
+        ]);
     }
 }

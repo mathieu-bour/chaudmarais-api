@@ -1,6 +1,7 @@
 {
-    "name": "laravel/lumen",
+    "name": "mathieu-bour/chaumarais-api",
     "description": "The Laravel Lumen Framework.",
+    "version": "1.0.0",
     "keywords": [
         "framework",
         "laravel",

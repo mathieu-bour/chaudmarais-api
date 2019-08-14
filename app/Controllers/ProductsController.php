@@ -13,7 +13,4 @@ use Mathrix\Lumen\Zero\Controllers\BaseController;
  */
 class ProductsController extends BaseController
 {
-    protected $with = [
-        "std:get" => "stocks"
-    ];
 }

@@ -6,35 +6,31 @@ require_once __DIR__ . '/../vendor/autoload.php';
     dirname(__DIR__)
 ))->bootstrap();
 
-/*
-|--------------------------------------------------------------------------
-| Create The Application
-|--------------------------------------------------------------------------
-|
-| Here we will load the environment and create the application instance
-| that serves as the central piece of this framework. We'll use this
-| application as an "IoC" container and router for this framework.
-|
-*/
+// APP_VERSION
+$version = "unknown";
+$composerData = json_decode(file_get_contents(__DIR__ . "/../composer.json"));
+putenv("APP_VERSION={$composerData->version}");
+
+// APP_BUILD
+$build = "unknown";
+
+if (file_exists(__DIR__ . "/../build.txt")) {
+    $build = trim(file_get_contents(__DIR__ . "/../build.txt"));
+} else if (`which git`) {
+    $base = realpath(dirname(__DIR__));
+    $gitSha1 = exec("cd $base && git log --pretty=format:'%H' -n 1");
+    $build = substr($gitSha1, 0, 7);
+}
+
+putenv("APP_BUILD=$build");
 
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
-
 $app->withFacades();
-
 $app->withEloquent();
 
-/*
-|--------------------------------------------------------------------------
-| Register Service Providers
-|--------------------------------------------------------------------------
-|
-| Here we will register all of the application's service providers which
-| are used to bind services into the container. Service providers are
-| totally optional, so you are not required to uncomment this line.
-|
-*/
+$app->configure("auth");
 
 $app->register(App\Providers\AppServiceProvider::class);
 

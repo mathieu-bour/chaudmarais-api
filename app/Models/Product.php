@@ -38,6 +38,13 @@ class Product extends BaseModel
     protected $casts = [
         "enabled" => "boolean"
     ];
+    protected $rules = [
+        "enabled" => "required|boolean",
+        "name" => "required|max:255",
+        "slug" => "required|max:255",
+        "description" => "required",
+        "order" => "required|min:0"
+    ];
 
 
     /**

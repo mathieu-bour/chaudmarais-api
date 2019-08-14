@@ -1,2 +1,4 @@
 <?php
-return [];
+return [
+    'App\\Models\\User' => 'App\\Policies\\UsersPolicy'
+];

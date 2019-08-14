@@ -11,7 +11,7 @@ use App\Models\User;
  * @copyright Mathrix Education SA.
  * @since 1.0.0
  */
-class UsersPolicy
+class UsersPolicy extends BasePolicy
 {
     /**
      * Users get policy.
@@ -24,21 +24,6 @@ class UsersPolicy
     public function get(User $requester, User $target): bool
     {
         return $this->selfOrHasScope($requester, $target, "users:read");
-    }
-
-
-    /**
-     * Permission to check if the target user is the requester himself, or if the requester got the right permission.
-     *
-     * @param User $requester
-     * @param User $target
-     * @param string $permission
-     *
-     * @return bool
-     */
-    private function selfOrHasScope(User $requester, User $target, string $permission): bool
-    {
-        return $requester->hasScope($permission) || $requester->id === $target->id;
     }
 
 

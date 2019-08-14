@@ -15,8 +15,8 @@ class StocksSeeder extends BaseTableSeeder
                 $stocks[] = [
                     "price" => 4969,
                     "size" => $size,
-                    "inventory" => 15,
-                    "available_inventory" => 15,
+                    "inventory" => 10,
+                    "available_inventory" => 10,
                     "product_id" => $productId,
                     "created_at" => Carbon::now(),
                     "updated_at" => Carbon::now()

@@ -1,10 +1,11 @@
 <?php
 
-namespace Tests;
+namespace Tests\API;
 
 use Laravel\Lumen\Testing\DatabaseTransactions;
 use Mathrix\Lumen\Zero\Testing\Traits\DebugTrait;
 use Mathrix\Lumen\Zero\Testing\Traits\RESTTrait;
+use Tests\TestCase;
 
 class UsersTest extends TestCase
 {
