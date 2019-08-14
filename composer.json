@@ -1,6 +1,6 @@
 {
     "name": "mathieu-bour/chaumarais-api",
-    "description": "The Laravel Lumen Framework.",
+    "description": "The Chaud Marais official API.",
     "version": "1.0.0",
     "keywords": [
         "framework",
@@ -33,11 +33,6 @@
             "App\\": "app/",
             "Tests\\": "tests/"
         }
-    },
-    "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ]
     },
     "repositories": {
         "mathrix/lumen-jwt-auth": {
