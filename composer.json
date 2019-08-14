@@ -11,13 +11,14 @@
     "type": "project",
     "require": {
         "php": ">=7.1.3",
+        "ext-json": "*",
+        "barryvdh/laravel-cors": "^0.11.3",
         "laravel/lumen-framework": "5.8.*",
         "mathrix/lumen-jwt-auth": "1.2.0",
         "mathrix/lumen-zero": "2.3.1",
         "mathrix/openapi-assertions": "0.9.1",
         "mathrix/openapi-processor": "0.9.6",
-        "stripe/stripe-php": "^6.43",
-        "ext-json": "*"
+        "stripe/stripe-php": "^6.43"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4",

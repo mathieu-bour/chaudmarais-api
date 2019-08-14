@@ -1,5 +1,22 @@
-/vendor
-/.idea
-Homestead.json
-Homestead.yaml
-.env
+/.env
+
+# User-specific stuff:
+/.idea/php.xml
+/.idea/*.iml
+/.idea/**/workspace.xml
+/.idea/dataSources*
+/.idea/dataSources/
+/.idea/dictionaries
+/.idea/httpRequests/
+/.idea/modules.xml
+/.idea/deployment.xml
+/.idea/sqldialects.xml
+
+/node_modules/
+/vendor/
+
+/artifacts
+/docs/output.yaml
+/resources/docs
+/resources/views/mails
+/storage/code-coverage/

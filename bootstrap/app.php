@@ -31,6 +31,7 @@ $app->withFacades();
 $app->withEloquent();
 
 $app->configure("auth");
+$app->configure("cors");
 
 $app->register(App\Providers\AppServiceProvider::class);
 

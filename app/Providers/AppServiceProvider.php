@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Console\Kernel;
 use App\Exceptions\Handler;
+use Barryvdh\Cors\ServiceProvider as CorsServiceProvider;
 use Illuminate\Contracts\Console\Kernel as LaravelKernel;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
@@ -32,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
             Kernel::class
         );
 
+        $this->app->register(CorsServiceProvider::class);
         $this->app->register(ObserverServiceProvider::class);
         $this->app->register(PolicyServiceProvider::class);
         $this->app->register(RegistrarServiceProvider::class);
