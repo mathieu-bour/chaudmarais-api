@@ -1,0 +1,8 @@
+id,enabled,name,slug,description,order,created_at,updated_at
+1,1,Tic Tac Hoe,tic-tac-hoe,T-shirt Tic Tac Hoe,0,2019-07-14 03:49:17,2019-07-14 03:49:17
+2,1,Butterface,butterface,T-shirt Butterface,1,2019-07-14 03:49:17,2019-07-14 03:49:17
+3,1,(Mind)Blowing,mindblowing,T-shirt (Mind)Blowing,2,2019-07-14 03:49:17,2019-07-14 03:49:17
+4,1,Pierre Feuille Ciseaux,pierre-feuille-ciseaux,T-shirt Pierre Feuille Ciseaux,3,2019-07-14 03:49:17,2019-07-14 03:49:17
+5,1,Catin,catin,T-shirt Catin,4,2019-07-14 03:49:17,2019-07-14 03:49:17
+6,1,Equality,equality,T-shirt Equality,5,2019-07-14 03:49:17,2019-07-14 03:49:17
+7,0,Chaud,chaud,Collier chaud,6,2019-07-14 03:49:17,2019-07-14 03:49:17

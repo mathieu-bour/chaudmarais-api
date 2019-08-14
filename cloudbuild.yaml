@@ -1,0 +1,41 @@
+# Chaud Marais API
+# =====================
+# Cloud Build Recipe
+# Author: Mathieu Bour
+# ====================
+#options:
+#  machineType: 'N1_HIGHCPU_8'
+steps:
+  # Decrypt the SSH private key for composer git clone
+  # --------------------------------------------------
+  - id: 'gcloud:kms:decrypt'
+    waitFor: ['-']
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'deploy/scripts/decrypt.sh'
+
+  # Install PHP dependencies using composer
+  # ---------------------------------------
+  - id: 'composer:install'
+    waitFor: ['gcloud:kms:decrypt']
+    name: 'gsingh1/prestissimo'
+    entrypoint: 'deploy/scripts/composer.sh'
+
+  # Build, push and deploy API image
+  # --------------------------------
+  - id: 'docker:build'
+    waitFor: ['composer:install']
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build',
+           '--build-arg', 'SHORT_SHA=$SHORT_SHA',
+           '--build-arg', 'BRANCH_NAME=$BRANCH_NAME',
+           '-t', 'eu.gcr.io/$PROJECT_ID/chaudmarais-api:$SHORT_SHA',
+           '.']
+  - id: 'docker:push'
+    waitFor: ['docker:build']
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'eu.gcr.io/$PROJECT_ID/chaudmarais-api:$SHORT_SHA']
+  - id: 'cloud-run:deploy'
+    waitFor: ['docker:push']
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'deploy/scripts/deploy.sh'
+    args: ['-b', '$BRANCH_NAME', '-s', '$SHORT_SHA']
