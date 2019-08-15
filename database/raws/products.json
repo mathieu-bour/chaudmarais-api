@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "enabled": true,
+        "name": "Tic Tac Hoe",
+        "slug": "tic-tac-hoe",
+        "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
+        "order": 0,
+        "created_at": "2019-07-14 03:49:17",
+        "updated_at": "2019-07-14 03:49:17",
+        "images": [
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/1\/male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/1\/female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/1\/male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/1\/female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "enabled": true,
+        "name": "Butterface",
+        "slug": "butterface",
+        "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
+        "order": 1,
+        "created_at": "2019-07-14 03:49:17",
+        "updated_at": "2019-07-14 03:49:17",
+        "images": [
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/2\/male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/2\/female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/2\/male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/2\/female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "enabled": true,
+        "name": "(Mind)Blowing",
+        "slug": "mindblowing",
+        "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
+        "order": 2,
+        "created_at": "2019-07-14 03:49:17",
+        "updated_at": "2019-07-14 03:49:17",
+        "images": [
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/3\/male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/3\/female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/3\/male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/3\/female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+        ]
+    },
+    {
+        "id": 4,
+        "enabled": true,
+        "name": "Pierre Feuille Ciseaux",
+        "slug": "pierre-feuille-ciseaux",
+        "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
+        "order": 3,
+        "created_at": "2019-07-14 03:49:17",
+        "updated_at": "2019-07-14 03:49:17",
+        "images": [
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/4\/male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/4\/female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/4\/male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/4\/female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+        ]
+    },
+    {
+        "id": 5,
+        "enabled": true,
+        "name": "Catin",
+        "slug": "catin",
+        "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
+        "order": 4,
+        "created_at": "2019-07-14 03:49:17",
+        "updated_at": "2019-07-14 03:49:17",
+        "images": [
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/5\/male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/5\/female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/5\/male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/5\/female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+        ]
+    },
+    {
+        "id": 6,
+        "enabled": true,
+        "name": "Equality",
+        "slug": "equality",
+        "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
+        "order": 5,
+        "created_at": "2019-07-14 03:49:17",
+        "updated_at": "2019-07-14 03:49:17",
+        "images": [
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/6\/male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/6\/female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/6\/male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/6\/female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+        ]
+    },
+    {
+        "id": 7,
+        "enabled": false,
+        "name": "Chaud",
+        "slug": "chaud",
+        "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
+        "order": 6,
+        "created_at": "2019-07-14 03:49:17",
+        "updated_at": "2019-07-14 03:49:17",
+        "images": [
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/7\/male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/7\/female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/7\/male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/7\/female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+        ]
+    }
+]

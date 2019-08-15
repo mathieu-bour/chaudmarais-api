@@ -20,9 +20,12 @@ use Mathrix\Lumen\Zero\Models\BaseModel;
  * @property string $name
  * @property string $slug
  * @property string $description
+ * @property string[] $images
  * @property int $order
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * ---
+ * @property int $price
  * ---
  * @property-read Collection|Stock[] $stocks
  */
@@ -33,10 +36,12 @@ class Product extends BaseModel
         "name",
         "slug",
         "description",
-        "order"
+        "order",
+        "images"
     ];
     protected $casts = [
-        "enabled" => "boolean"
+        "enabled" => "boolean",
+        "images" => "array"
     ];
     protected $rules = [
         "enabled" => "required|boolean",
@@ -45,6 +50,7 @@ class Product extends BaseModel
         "description" => "required",
         "order" => "required|min:0"
     ];
+    protected $appends = ["price"];
 
 
     /**
@@ -53,5 +59,16 @@ class Product extends BaseModel
     public function stocks(): HasMany
     {
         return $this->hasMany(Stock::class);
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getPriceAttribute()
+    {
+        /** @var Stock|null $stock */
+        $stock = $this->stocks()->orderBy("price")->first();
+
+        return $stock !== null ? $stock->price : null;
     }
 }

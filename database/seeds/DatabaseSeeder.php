@@ -15,7 +15,7 @@ class DatabaseSeeder extends BaseTableSeeder
     {
         $this->seedFromFactory(User::class, ["count" => 20]);
         $this->seedFromFactory(Address::class, ["count" => 40]);
-        $this->seedFromCsv("products");
+        $this->seedFromJson("products");
         $this->call(StocksSeeder::class);
     }
 }

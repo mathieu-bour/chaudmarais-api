@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string("name");
             $table->string("slug");
             $table->text("description");
+            $table->json("images");
             $table->unsignedTinyInteger("order");
             $table->timestamps();
         });
