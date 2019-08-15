@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateProductsTable extends Migration
 {
@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string("name");
             $table->string("slug");
             $table->text("description");
+            $table->string("image_first")->nullable();
             $table->json("images");
             $table->unsignedTinyInteger("order");
             $table->timestamps();

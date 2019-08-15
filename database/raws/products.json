@@ -2,109 +2,115 @@
     {
         "id": 1,
         "enabled": true,
-        "name": "Tic Tac Hoe",
-        "slug": "tic-tac-hoe",
+        "name": "(Mind)Blowing",
+        "slug": "mindblowing",
         "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
         "order": 0,
         "created_at": "2019-07-14 03:49:17",
         "updated_at": "2019-07-14 03:49:17",
+        "image_first": "https://cdn.chaudmarais.fr/img/products/normalized/1_male-american_plan.jpg",
         "images": [
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/1\/male-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/1\/female-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/1\/male-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/1\/female-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/1_male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/1_female-american_plan.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/1_male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/1_female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_female-back.jpg"
         ]
     },
     {
         "id": 2,
         "enabled": true,
-        "name": "Butterface",
-        "slug": "butterface",
+        "name": "Catin",
+        "slug": "catin",
         "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
         "order": 1,
         "created_at": "2019-07-14 03:49:17",
         "updated_at": "2019-07-14 03:49:17",
+        "image_first": "https://cdn.chaudmarais.fr/img/products/normalized/2_female-american_plan.jpg",
         "images": [
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/2\/male-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/2\/female-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/2\/male-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/2\/female-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/2_female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/2_male-american_plan.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/2_female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/2_male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_female-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_male-back.jpg"
         ]
     },
     {
         "id": 3,
         "enabled": true,
-        "name": "(Mind)Blowing",
-        "slug": "mindblowing",
+        "name": "Tic Tac Hoe",
+        "slug": "tic-tac-hoe",
         "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
         "order": 2,
         "created_at": "2019-07-14 03:49:17",
         "updated_at": "2019-07-14 03:49:17",
+        "image_first": "https://cdn.chaudmarais.fr/img/products/normalized/3_female-american_plan.jpg",
         "images": [
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/3\/male-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/3\/female-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/3\/male-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/3\/female-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/3_male-american_plan.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/3_female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/3_female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/3_male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_female-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_male-back.jpg"
         ]
     },
     {
         "id": 4,
         "enabled": true,
-        "name": "Pierre Feuille Ciseaux",
-        "slug": "pierre-feuille-ciseaux",
+        "name": "Butterface",
+        "slug": "butterface",
         "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
         "order": 3,
         "created_at": "2019-07-14 03:49:17",
         "updated_at": "2019-07-14 03:49:17",
+        "image_first": "https://cdn.chaudmarais.fr/img/products/normalized/4_male-american_plan.jpg",
         "images": [
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/4\/male-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/4\/female-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/4\/male-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/4\/female-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/4_male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/4_female-american_plan.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/4_male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/4_female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_female-back.jpg"
         ]
     },
     {
         "id": 5,
         "enabled": true,
-        "name": "Catin",
-        "slug": "catin",
+        "name": "Equality",
+        "slug": "equality",
         "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
         "order": 4,
         "created_at": "2019-07-14 03:49:17",
         "updated_at": "2019-07-14 03:49:17",
+        "image_first": "https://cdn.chaudmarais.fr/img/products/normalized/5_male-american_plan.jpg",
         "images": [
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/5\/male-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/5\/female-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/5\/male-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/5\/female-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/5_male-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/5_female-american_plan.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/5_male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/5_female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_male-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_female-back.jpg"
         ]
     },
     {
         "id": 6,
         "enabled": true,
-        "name": "Equality",
-        "slug": "equality",
+        "name": "Pierre Feuille Ciseaux",
+        "slug": "pierre-feuille-ciseaux",
         "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
         "order": 5,
         "created_at": "2019-07-14 03:49:17",
         "updated_at": "2019-07-14 03:49:17",
+        "image_first": "https://cdn.chaudmarais.fr/img/products/normalized/6_female-american_plan.jpg",
         "images": [
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/6\/male-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/6\/female-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/6\/male-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/6\/female-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/6_female-front.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/6_male-american_plan.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/6_female-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/6_male-3_4.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_female-back.jpg",
+            "https:\/\/cdn.chaudmarais.fr\/img\/products\/normalized\/common_male-back.jpg"
         ]
     },
     {
@@ -112,17 +118,11 @@
         "enabled": false,
         "name": "Chaud",
         "slug": "chaud",
-        "description": "100 % coton bio\nCon\u00e7u, dessin\u00e9s et brod\u00e9s en France\nCoupe unisexe\n\nRime et Axel portent une taille M",
+        "description": "",
         "order": 6,
         "created_at": "2019-07-14 03:49:17",
         "updated_at": "2019-07-14 03:49:17",
-        "images": [
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/7\/male-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/7\/female-front.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/7\/male-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/products\/7\/female-3_4.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/male-back.jpg",
-            "https:\/\/cdn.chaudmarais.fr\/img\/common\/female-back.jpg"
-        ]
+        "image_first": null,
+        "images": []
     }
 ]
