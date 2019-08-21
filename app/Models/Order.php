@@ -43,7 +43,7 @@ class Order extends BaseModel
         self::RETURNED
     ];
 
-    protected $fillable = ["status", "address_id", "user_id"];
+    protected $fillable = ["status", "stripe_id", "address_id", "user_id"];
     protected $rules = [
         "address_id" => "required|exist:address,id",
         "user_id" => "required|exist:users,id"

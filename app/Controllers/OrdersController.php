@@ -38,19 +38,21 @@ class OrdersController
     {
         /** @var PaymentIntent $paymentIntent */
         $paymentIntent = $event->data->object;
-
         /** @var User $user */
         $user = User::query()
             ->where("stripe_id", "=", $paymentIntent->customer)
             ->firstOrFail();
-
+        /** @var Address $address */
         $address = Address::query()
             ->where("line1", "=", $paymentIntent->shipping->address->line1)
             ->firstOrFail();
 
         $metadata = json_decode($paymentIntent->metadata, true);
+
         $order = new Order();
+        $order->status = Order::PAID;
         $order->stripe_id = $paymentIntent->id;
+        $order->address_id = $address->id;
         $order->user_id = $user->id;
         $order->save();
 
