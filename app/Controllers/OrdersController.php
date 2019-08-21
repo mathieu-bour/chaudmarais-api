@@ -28,7 +28,7 @@ class OrdersController
         switch ($event->type) {
             case 'payment_intent.succeeded':
                 $paymentIntent = $event->data->object; // contains a \Stripe\PaymentIntent
-                return $this->handlePaymentIntentSucceeded($paymentIntent);
+                return $this->handlePaymentIntentSucceeded($event);
             default:
                 throw new UnsupportedWebhookException($event->type);
         }
