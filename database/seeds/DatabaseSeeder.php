@@ -17,5 +17,10 @@ class DatabaseSeeder extends BaseTableSeeder
         $this->seedFromFactory(Address::class, ["count" => 40]);
         $this->seedFromJson("products");
         $this->call(StocksSeeder::class);
+
+        $admin = User::query()->findOrFail(1);
+        $admin->update(["email" => "admin@chaudmarais.fr"]);
+        $client = User::query()->findOrFail(2);
+        $client->update(["email" => "client@chaudmarais.fr"]);
     }
 }

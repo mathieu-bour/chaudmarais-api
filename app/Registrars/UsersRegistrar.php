@@ -16,7 +16,10 @@ class UsersRegistrar extends BaseRegistrar
     {
         $this->rest([
             "std:post" => null,
+            "std:get" => "logged",
             "std:patch" => "logged",
+            "rel:get:addresses" => "logged",
+            "rel:get:orders" => "logged"
         ]);
         $this->post("/users/login", UsersController::class . "@login");
     }

@@ -2,7 +2,11 @@
 
 namespace App\Controllers;
 
+use Illuminate\Http\Request;
 use Mathrix\Lumen\Zero\Controllers\BaseController;
+use Mathrix\Lumen\Zero\Exceptions\Http\Http400BadRequestException;
+use Mathrix\Lumen\Zero\Exceptions\Http\Http401UnauthorizedException;
+use Mathrix\Lumen\Zero\Responses\PaginationJsonResponse;
 
 /**
  * Class ProductsController.

@@ -10,6 +10,7 @@ use Faker\Generator;
  */
 $factory->define(Address::class, function (Generator $faker) {
     return [
+        "name" => "{$faker->firstName} {$faker->lastName}",
         "line1" => $faker->streetAddress,
         "line2" => $faker->userName,
         "postal_code" => $faker->postcode,

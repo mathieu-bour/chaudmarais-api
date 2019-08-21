@@ -4,19 +4,27 @@
 namespace App\Services\Shop;
 
 
+use App\Models\Product;
 use App\Models\Stock;
+use Illuminate\Support\Collection;
 
 class Cart implements \JsonSerializable
 {
-    private $content;
+    /** @var Collection */
+    private $items;
+    private $shippingCost = 630;
 
     public function __construct(array $content)
     {
-        $this->content = collect($content)->map(function ($line) {
+        $this->items = collect($content)->map(function ($line) {
+            /** @var Stock $stock */
+            $stock = Stock::query()->findOrFail($line["stock_id"]);
+            $product = Product::query()->findOrFail($stock->product_id);
+
             return [
                 "quantity" => $line["quantity"],
-                "stock" => Stock::query()->with("product")
-                    ->findOrFail($line["stock_id"])
+                "stock" => $stock,
+                "product" => $product
             ];
         });
     }
@@ -26,18 +34,29 @@ class Cart implements \JsonSerializable
      *
      * @return int
      */
-    public function getTotal(): int
+    public function getSubtotal(): int
     {
-        $this->content->sum(function ($line) {
+        return $this->items->sum(function ($line) {
             /** @var Stock $stock */
             $stock = $line["stock"];
             return $stock->price;
         });
     }
 
+    public function getTotal(): int
+    {
+        return $this->getSubtotal() + $this->shippingCost;
+    }
+
 
     public function jsonSerialize()
     {
-        return $this->content;
+        $minified = [];
+
+        foreach ($this->items as $item) {
+            $minified[$item["stock"]->id] = $item["quantity"];
+        }
+
+        return $minified;
     }
 }

@@ -14,6 +14,7 @@ use Mathrix\Lumen\Zero\Models\BaseModel;
  * @since 1.0.0
  *
  * @property-read int $id
+ * @property string $name
  * @property string $line1
  * @property string $line2
  * @property string $postal_code
@@ -28,6 +29,7 @@ use Mathrix\Lumen\Zero\Models\BaseModel;
 class Address extends BaseModel
 {
     protected $fillable = [
+        "name",
         "line1",
         "line2",
         "postal_code",
@@ -36,6 +38,7 @@ class Address extends BaseModel
         "user_id"
     ];
     protected $rules = [
+        "name" => "required|max:255",
         "line1" => "required|max:255",
         "line2" => "nullable|max:255",
         "postal_code" => "required|max:255",
