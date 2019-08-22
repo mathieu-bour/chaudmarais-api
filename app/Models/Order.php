@@ -45,8 +45,8 @@ class Order extends BaseModel
 
     protected $fillable = ["status", "stripe_id", "address_id", "user_id"];
     protected $rules = [
-        "address_id" => "required|exist:address,id",
-        "user_id" => "required|exist:users,id"
+        "address_id" => "required|exists:address,id",
+        "user_id" => "required|exists:users,id"
     ];
 
 
