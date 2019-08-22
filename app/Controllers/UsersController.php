@@ -18,7 +18,7 @@ use Stripe\Customer;
 class UsersController extends BaseController
 {
     protected $with = [
-        "rel:get:orders" => "stock.product"
+        "rel:get:orders" => "stocks.product"
     ];
 
     /**
