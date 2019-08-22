@@ -34,6 +34,7 @@ class UsersController extends BaseController
             "email" => $user->email
         ]);
 
+        $user->scopes = []; // Default scopes
         $user->stripe_id = $stripeCustomer->id;
         $user->save();
 

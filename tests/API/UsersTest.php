@@ -20,6 +20,7 @@ class UsersTest extends TestCase
             "password" => "password"
         ]);
 
+        $this->debug();
         $this->assertResponseOk();
     }
 }
