@@ -65,14 +65,14 @@ class OrdersController extends BaseController
 
         $order = new Order();
         $order->status = Order::PAID;
-        $order->stripe_id = $paymentIntent->id;
-        $order->address = array_merge(
+        $order->content = $content;
+        $order->shipping = array_merge(
             ["name" => $paymentIntent->shipping->name],
             json_decode(json_encode($paymentIntent->shipping->address), true)
         );
-        $order->content = $content;
-        $order->user_id = $user->id;
         $order->receipt_url = $charge->receipt_url;
+        $order->stripe_id = $paymentIntent->id;
+        $order->user_id = $user->id;
         $order->save();
 
         return new SuccessJsonResponse($order);

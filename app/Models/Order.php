@@ -18,10 +18,10 @@ use Mathrix\Lumen\Zero\Models\BaseModel;
  *
  * @property-read int $id
  * @property string $status
+ * @property array $content
+ * @property array $shipping
  * @property string $receipt_url
  * @property string $stripe_id
- * @property array $content
- * @property array $address
  * @property int $user_id
  * @property Carbon $created_at
  * @property Carbon $updated_at
