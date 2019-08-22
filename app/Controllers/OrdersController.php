@@ -53,7 +53,7 @@ class OrdersController extends BaseController
         /** @var PaymentIntent $paymentIntent */
         $paymentIntent = $event->data->object;
         /** @var Charge $charge */
-        $charge = $paymentIntent->charges[0];
+        $charge = $paymentIntent->charges->data[0];
 
         /** @var User $user */
         $user = User::query()
