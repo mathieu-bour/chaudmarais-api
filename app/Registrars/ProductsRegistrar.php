@@ -14,6 +14,8 @@ class ProductsRegistrar extends BaseRegistrar
     {
         $controller = ProductsController::class;
 
+        $this->get("/products/enabled", "$controller@enabled");
+
         $this->rest([
             "std:index" => "scope:products:read",
             "std:post" => "scope:products:write",
@@ -21,7 +23,5 @@ class ProductsRegistrar extends BaseRegistrar
             "std:patch" => "scope:products:write",
             "rel:get:stocks" => null
         ]);
-
-        $this->get("/products/enabled", "$controller@enabled");
     }
 }
