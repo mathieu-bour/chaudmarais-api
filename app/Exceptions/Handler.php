@@ -73,7 +73,7 @@ class Handler extends ExceptionHandler
             "message" => $exception->getMessage(),
         ];
 
-        if (!app()->environment("master")) {
+        if (!env("APP_DEBUG")) {
             $json["debug"] = [
                 "exception" => get_class($exception),
                 "trace" => explode("\n", $exception->getTraceAsString())
