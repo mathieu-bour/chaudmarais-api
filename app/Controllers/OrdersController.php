@@ -56,8 +56,8 @@ class OrdersController
         $order->user_id = $user->id;
         $order->save();
 
-        foreach ($metadata as $stockId => $quantity) {
-            $metadata[$stockId] = ["quantity" => $quantity];
+        foreach ($metadata as $line) {
+            $metadata[$line["stock_id"]] = ["quantity" => $line["quantity"]];
         }
 
         $order->stocks()->attach($metadata);

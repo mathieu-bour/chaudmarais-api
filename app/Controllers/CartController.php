@@ -49,7 +49,7 @@ class CartController extends BaseController
             "currency" => "eur",
             "customer" => $user->stripe_id,
             "metadata" => [
-                "cart" => json_encode($cart)
+                "cart" => json_encode($rawCart)
             ]
         ]);
 
