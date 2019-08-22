@@ -23,4 +23,8 @@ class UsersTest extends TestCase
         $this->debug();
         $this->assertResponseOk();
     }
+
+    public function testLol() {
+        $this->json("get", "/users/2/orders");
+    }
 }

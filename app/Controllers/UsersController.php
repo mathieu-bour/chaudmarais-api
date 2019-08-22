@@ -17,6 +17,10 @@ use Stripe\Customer;
  */
 class UsersController extends BaseController
 {
+    protected $with = [
+        "rel:get:orders" => "stock.product"
+    ];
+
     /**
      * POST /users
      * Register a new user in the application.

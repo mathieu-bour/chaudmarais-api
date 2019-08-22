@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 
 
 use App\Models\Product;
+use App\Models\User;
 use Mathrix\Lumen\Zero\Console\Commands\BaseCommand;
 use Stripe\PaymentIntent;
 
@@ -14,7 +15,7 @@ class TestCommand extends BaseCommand
 
     public function handle()
     {
-        $p = PaymentIntent::retrieve("pi_1FANVRElZAjOaET6pTYE0DQ1");
-        dd($p->charges->data[0]->receipt_url);
+        $user = User::query()->findOrFail(2);
+        dd($user->orders()->with(["stocks.product"])->get()->toArray());
     }
 }
