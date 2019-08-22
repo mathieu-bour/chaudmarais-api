@@ -20,14 +20,13 @@ use Mathrix\Lumen\Zero\Models\BaseModel;
  * @property string $status
  * @property string $receipt_url
  * @property string $stripe_id
- * @property int $address_id
+ * @property array $content
+ * @property array $address
  * @property int $user_id
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * ---
- * @property-read Address $address
  * @property-read User $user
- * @property-read Collection|Stock $stocks
  */
 class Order extends BaseModel
 {
@@ -44,20 +43,14 @@ class Order extends BaseModel
         self::RETURNED
     ];
 
-    protected $fillable = ["status", "stripe_id", "address_id", "user_id"];
+    protected $fillable = ["status", "stripe_id", "content", "address", "user_id"];
     protected $rules = [
-        "address_id" => "required|exists:addresses,id",
         "user_id" => "required|exists:users,id"
     ];
-
-
-    /**
-     * @return BelongsTo
-     */
-    public function address(): BelongsTo
-    {
-        return $this->belongsTo(Address::class);
-    }
+    protected $casts = [
+        "content" => "array",
+        "address" => "array"
+    ];
 
 
     /**
@@ -66,14 +59,5 @@ class Order extends BaseModel
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-    }
-
-
-    /**
-     * @return BelongsToMany
-     */
-    public function stocks(): BelongsToMany
-    {
-        return $this->belongsToMany(Stock::class)->withPivot(["quantity"]);
     }
 }

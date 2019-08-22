@@ -18,13 +18,13 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements("id");
             $table->enum("status", Order::STATUSES);
             $table->string("receipt_url")->nullable();
+            $table->json("content");
+            $table->json("shipping");
             $table->string("stripe_id");
-            $table->unsignedBigInteger("address_id");
             $table->unsignedBigInteger("user_id");
             $table->timestamps();
 
             // Foreign keys
-            $table->foreign("address_id")->references("id")->on("addresses");
             $table->foreign("user_id")->references("id")->on("users");
         });
     }

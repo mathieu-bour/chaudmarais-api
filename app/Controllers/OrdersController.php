@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Exceptions\UnsupportedWebhookException;
-use App\Models\Address;
 use App\Models\Order;
 use App\Models\User;
 use App\Services\Shop\Cart;
@@ -59,26 +58,22 @@ class OrdersController extends BaseController
         $user = User::query()
             ->where("stripe_id", "=", $paymentIntent->customer)
             ->firstOrFail();
-        /** @var Address $address */
-        $address = Address::query()
-            ->where("line1", "=", $paymentIntent->shipping->address->line1)
-            ->firstOrFail();
 
-        $cart = Cart::fromString($paymentIntent->metadata->cart);
+        $content = Cart::fromString($paymentIntent->metadata->cart)
+            ->getItems()
+            ->toArray();
 
         $order = new Order();
         $order->status = Order::PAID;
         $order->stripe_id = $paymentIntent->id;
-        $order->address_id = $address->id;
+        $order->address = array_merge(
+            ["name" => $paymentIntent->shipping->name],
+            $paymentIntent->shipping->address
+        );
+        $order->content = $content;
         $order->user_id = $user->id;
         $order->receipt_url = $charge->receipt_url;
         $order->save();
-
-        $attach = [];
-        foreach ($cart->getItems() as $item) {
-            $attach[$item["stock"]->id] = ["quantity" => $item["quantity"]];
-        }
-        $order->stocks()->attach($attach);
 
         return new SuccessJsonResponse($order);
     }
