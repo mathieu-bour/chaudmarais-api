@@ -80,7 +80,9 @@ return [
         '/products',
         [
             'uses' => 'App\\Controllers\\ProductsController',
-            'middleware' => null
+            'middleware' => [
+                'scope:products:read'
+            ]
         ]
     ],
     [
@@ -117,6 +119,13 @@ return [
         [
             'uses' => 'App\\Controllers\\ProductsController',
             'middleware' => null
+        ]
+    ],
+    [
+        'GET',
+        '/products/enabled',
+        [
+            'uses' => 'App\\Controllers\\ProductsController@enabled'
         ]
     ],
     [

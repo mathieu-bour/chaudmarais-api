@@ -8,12 +8,20 @@ use App\Models\Order;
 use App\Models\User;
 use App\Services\Shop\Cart;
 use Illuminate\Http\Request;
+use Mathrix\Lumen\Zero\Controllers\BaseController;
 use Mathrix\Lumen\Zero\Responses\SuccessJsonResponse;
 use Stripe\Charge;
 use Stripe\Event;
 use Stripe\PaymentIntent;
 
-class OrdersController
+/**
+ * Class OrdersController.
+ *
+ * @author Mathieu Bour <mathieu@mathrix.fr>
+ * @copyright Mathrix Education SA.
+ * @since 1.0.0
+ */
+class OrdersController extends BaseController
 {
     /**
      * @param Request $request
@@ -27,19 +35,26 @@ class OrdersController
 
         switch ($event->type) {
             case 'payment_intent.succeeded':
-                $paymentIntent = $event->data->object; // contains a \Stripe\PaymentIntent
                 return $this->handlePaymentIntentSucceeded($event);
             default:
                 throw new UnsupportedWebhookException($event->type);
         }
     }
 
+    /**
+     * Handle payment_intent.succeeded event
+     *
+     * @param Event $event
+     *
+     * @return SuccessJsonResponse
+     */
     public function handlePaymentIntentSucceeded(Event $event)
     {
         /** @var PaymentIntent $paymentIntent */
         $paymentIntent = $event->data->object;
         /** @var Charge $charge */
         $charge = $paymentIntent->charges[0];
+
         /** @var User $user */
         $user = User::query()
             ->where("stripe_id", "=", $paymentIntent->customer)

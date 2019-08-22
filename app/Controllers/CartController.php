@@ -12,25 +12,6 @@ use Stripe\PaymentIntent;
 class CartController extends BaseController
 {
     /**
-     * POST /cart/check
-     * Allow to check the cart, given a array of [stock_id, quantity].
-     *
-     * @param Request $request
-     *
-     * @return SuccessJsonResponse
-     */
-    public function check(Request $request): SuccessJsonResponse
-    {
-        $cart = new Cart($request->json("cart"));
-
-        return new SuccessJsonResponse([
-            "cart" => $cart->jsonSerialize(),
-            "subtotal" => $cart->getSubtotal(),
-            "total" => $cart->getTotal()
-        ]);
-    }
-
-    /**
      * POST /cart/initialize
      *
      * @param Request $request

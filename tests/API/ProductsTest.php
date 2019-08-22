@@ -19,4 +19,10 @@ class ProductsTest extends APIStatelessTestCase
         "std:patch",
         "rel:get:stocks"
     ];
+
+    public function testEnabled()
+    {
+        $this->json("get", "/products/enabled");
+        $this->assertResponseOk();
+    }
 }
