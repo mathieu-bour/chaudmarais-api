@@ -68,7 +68,7 @@ class OrdersController extends BaseController
         $order->stripe_id = $paymentIntent->id;
         $order->address = array_merge(
             ["name" => $paymentIntent->shipping->name],
-            $paymentIntent->shipping->address
+            json_decode(json_encode($paymentIntent->shipping->address), true)
         );
         $order->content = $content;
         $order->user_id = $user->id;
