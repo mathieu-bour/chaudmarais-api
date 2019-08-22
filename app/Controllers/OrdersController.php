@@ -1,15 +1,15 @@
 <?php
 
-
 namespace App\Controllers;
-
 
 use App\Exceptions\UnsupportedWebhookException;
 use App\Models\Address;
 use App\Models\Order;
 use App\Models\User;
+use App\Services\Shop\Cart;
 use Illuminate\Http\Request;
 use Mathrix\Lumen\Zero\Responses\SuccessJsonResponse;
+use Stripe\Charge;
 use Stripe\Event;
 use Stripe\PaymentIntent;
 
@@ -38,6 +38,8 @@ class OrdersController
     {
         /** @var PaymentIntent $paymentIntent */
         $paymentIntent = $event->data->object;
+        /** @var Charge $charge */
+        $charge = $paymentIntent->charges[0];
         /** @var User $user */
         $user = User::query()
             ->where("stripe_id", "=", $paymentIntent->customer)
@@ -47,20 +49,21 @@ class OrdersController
             ->where("line1", "=", $paymentIntent->shipping->address->line1)
             ->firstOrFail();
 
-        $metadata = json_decode($paymentIntent->metadata, true);
+        $cart = Cart::fromString($paymentIntent->metadata->cart);
 
         $order = new Order();
         $order->status = Order::PAID;
         $order->stripe_id = $paymentIntent->id;
         $order->address_id = $address->id;
         $order->user_id = $user->id;
+        $order->receipt_url = $charge->receipt_url;
         $order->save();
 
-        foreach ($metadata as $line) {
-            $metadata[$line["stock_id"]] = ["quantity" => $line["quantity"]];
+        $attach = [];
+        foreach ($cart->getItems() as $item) {
+            $attach[$item["stock"]->id] = ["quantity" => $item["quantity"]];
         }
-
-        $order->stocks()->attach($metadata);
+        $order->stocks()->attach($attach);
 
         return new SuccessJsonResponse($order);
     }

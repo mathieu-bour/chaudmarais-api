@@ -18,6 +18,7 @@ use Mathrix\Lumen\Zero\Models\BaseModel;
  *
  * @property-read int $id
  * @property string $status
+ * @property string $receipt_url
  * @property string $stripe_id
  * @property int $address_id
  * @property int $user_id

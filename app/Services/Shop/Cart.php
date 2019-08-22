@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\Stock;
 use Illuminate\Support\Collection;
 
-class Cart implements \JsonSerializable
+class Cart
 {
     /** @var Collection */
     private $items;
@@ -29,6 +29,38 @@ class Cart implements \JsonSerializable
         });
     }
 
+    public static function fromString($string): Cart
+    {
+        $content = collect(explode("|", $string))
+            ->map(function ($itemString) {
+                [$stockId, $quantity] = explode(",", $itemString);
+
+                return [
+                    "stock_id" => $stockId,
+                    "quantity" => $quantity
+                ];
+            })
+            ->toArray();
+
+        return new Cart($content);
+    }
+
+    public function __toString(): string
+    {
+        $string = $this->items
+            ->map(function ($item) {
+                return "{$item["stock"]->id},{$item["quantity"]}";
+            })
+            ->implode("|");
+
+        return $string;
+    }
+
+    public function getItems()
+    {
+        return $this->items;
+    }
+
     /**
      * Get the cart total in cents
      *
@@ -46,17 +78,5 @@ class Cart implements \JsonSerializable
     public function getTotal(): int
     {
         return $this->getSubtotal() + $this->shippingCost;
-    }
-
-
-    public function jsonSerialize()
-    {
-        $minified = [];
-
-        foreach ($this->items as $item) {
-            $minified[$item["stock"]->id] = $item["quantity"];
-        }
-
-        return $minified;
     }
 }

@@ -13,21 +13,10 @@ class TestCommand extends BaseCommand
 
     public function handle()
     {
-        $products = Product::all()->map(function (Product $p) {
-            $p->images = [
-                "https://cdn.chaudmarais.fr/img/products/{$p->id}/male-front.jpg",
-                "https://cdn.chaudmarais.fr/img/products/{$p->id}/female-front.jpg",
-                "https://cdn.chaudmarais.fr/img/products/{$p->id}/male-3_4.jpg",
-                "https://cdn.chaudmarais.fr/img/products/{$p->id}/female-3_4.jpg",
-                "https://cdn.chaudmarais.fr/img/common/male-back.jpg",
-                "https://cdn.chaudmarais.fr/img/common/female-back.jpg",
-            ];
-            $p->description = "100 % coton bio\nConçu, dessinés et brodés en France\nCoupe unisexe\n\nRime et Axel portent une taille M";
+        $urljson = "%5B%7B%22stock_id%22%3A1%2C%22quantity%22%3A3%7D%5D";
+        $array = json_decode(urldecode($urljson), true);
+        $serialize = serialize($urljson);
 
-            $p->setAppends([]);
-            return $p;
-        });
-
-        $this->output->writeln(json_encode($products, JSON_PRETTY_PRINT));
+        dd($array, [$urljson, strlen($urljson)], [$serialize, strlen($serialize)]);
     }
 }

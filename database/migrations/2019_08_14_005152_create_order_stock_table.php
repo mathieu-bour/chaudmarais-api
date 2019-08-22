@@ -16,7 +16,7 @@ class CreateOrderStockTable extends Migration
         Schema::create("order_stock", function (Blueprint $table) {
             $table->unsignedBigInteger("order_id");
             $table->unsignedBigInteger("stock_id");
-            $table->timestamps();
+            $table->unsignedTinyInteger("quantity");
 
             // Foreign keys
             $table->foreign("order_id")->references("id")->on("orders");
