@@ -49,7 +49,7 @@ class Order extends BaseModel
     ];
     protected $casts = [
         "content" => "array",
-        "address" => "array"
+        "shipping" => "array"
     ];
 
 
