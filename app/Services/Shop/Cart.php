@@ -12,7 +12,7 @@ class Cart
 {
     /** @var Collection */
     private $items;
-    private $shippingCost = 630;
+    private $shippingPrice = 630;
 
     public function __construct(array $content)
     {
@@ -62,7 +62,7 @@ class Cart
     }
 
     /**
-     * Get the cart total in cents
+     * Get the cart subtotal in cents
      *
      * @return int
      */
@@ -75,8 +75,24 @@ class Cart
         });
     }
 
+    /**
+     * Get the shipping price in cents
+     *
+     * @return int
+     */
+    public function getShippingPrice(): int
+    {
+        return $this->shippingPrice;
+    }
+
+
+    /**
+     * Get the cart total in cents
+     *
+     * @return int
+     */
     public function getTotal(): int
     {
-        return $this->getSubtotal() + $this->shippingCost;
+        return $this->getSubtotal() + $this->shippingPrice;
     }
 }

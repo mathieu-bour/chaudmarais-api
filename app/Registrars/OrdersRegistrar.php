@@ -22,6 +22,10 @@ class OrdersRegistrar extends BaseRegistrar
         $controller = OrdersController::class;
         $this->post("/orders/webhook", "$controller@webhook");
 
+        $this->group(["middleware" => "scope:orders:read"], function () use ($controller) {
+            $this->get("/orders/paid", "$controller@paid");
+        });
+
         $this->rest([
             "std:patch" => "scope:orders:write",
             "rel:get:stocks" => "logged"

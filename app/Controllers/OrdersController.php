@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Services\Shop\Cart;
 use Illuminate\Http\Request;
 use Mathrix\Lumen\Zero\Controllers\BaseController;
+use Mathrix\Lumen\Zero\Exceptions\Http\Http400BadRequestException;
+use Mathrix\Lumen\Zero\Responses\PaginationJsonResponse;
 use Mathrix\Lumen\Zero\Responses\SuccessJsonResponse;
 use Stripe\Charge;
 use Stripe\Event;
@@ -23,6 +25,19 @@ use Stripe\PaymentIntent;
 class OrdersController extends BaseController
 {
     /**
+     * GET /orders/paid
+     *
+     * @return PaginationJsonResponse
+     * @throws Http400BadRequestException
+     */
+    public function paid(): PaginationJsonResponse
+    {
+        $query = Order::query()->where("type", "=", Order::PAID);
+
+        return new PaginationJsonResponse($query);
+    }
+
+    /**
      * @param Request $request
      *
      * @return mixed
@@ -33,7 +48,7 @@ class OrdersController extends BaseController
         $event = Event::constructFrom($request->all());
 
         switch ($event->type) {
-            case 'payment_intent.succeeded':
+            case "payment_intent.succeeded":
                 return $this->handlePaymentIntentSucceeded($event);
             default:
                 throw new UnsupportedWebhookException($event->type);
@@ -59,12 +74,14 @@ class OrdersController extends BaseController
             ->where("stripe_id", "=", $paymentIntent->customer)
             ->firstOrFail();
 
-        $content = Cart::fromString($paymentIntent->metadata->cart)
-            ->getItems()
-            ->toArray();
+        $cart = Cart::fromString($paymentIntent->metadata->cart);
+        $content = $cart->getItems()->toArray();
 
         $order = new Order();
         $order->status = Order::PAID;
+        $order->subtotal = $cart->getSubtotal();
+        $order->shipping_price = $cart->getShippingPrice();
+        $order->total = $cart->getTotal();
         $order->content = $content;
         $order->shipping = array_merge(
             ["name" => $paymentIntent->shipping->name],

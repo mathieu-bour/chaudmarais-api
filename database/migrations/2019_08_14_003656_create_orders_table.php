@@ -17,6 +17,9 @@ class CreateOrdersTable extends Migration
         Schema::create("orders", function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->enum("status", Order::STATUSES);
+            $table->unsignedInteger("subtotal");
+            $table->unsignedInteger("shipping_price");
+            $table->unsignedInteger("total");
             $table->json("content");
             $table->json("shipping");
             $table->string("receipt_url")->nullable();

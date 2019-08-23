@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->boolean("enabled")->default(false);
             $table->string("name");
             $table->string("slug");
+            $table->string("type");
             $table->text("description");
             $table->string("image_first")->nullable();
             $table->json("images");

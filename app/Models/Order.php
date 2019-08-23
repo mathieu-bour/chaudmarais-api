@@ -3,9 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Mathrix\Lumen\Zero\Models\BaseModel;
 
 
@@ -18,6 +16,9 @@ use Mathrix\Lumen\Zero\Models\BaseModel;
  *
  * @property-read int $id
  * @property string $status
+ * @property int $subtotal
+ * @property int $shipping_price
+ * @property int $total
  * @property array $content
  * @property array $shipping
  * @property string $receipt_url
@@ -43,7 +44,17 @@ class Order extends BaseModel
         self::RETURNED
     ];
 
-    protected $fillable = ["status", "stripe_id", "content", "address", "user_id"];
+    protected $fillable = [
+        "status",
+        "subtotal",
+        "shipping_price",
+        "total",
+        "content",
+        "shipping",
+        "receipt_url",
+        "stripe_id",
+        "user_id"
+    ];
     protected $rules = [
         "user_id" => "required|exists:users,id"
     ];
