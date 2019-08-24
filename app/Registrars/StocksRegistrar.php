@@ -19,8 +19,8 @@ class StocksRegistrar extends BaseRegistrar
     public function register(): void
     {
         $this->rest([
-            "std:post" => "stocks:write",
-            "std:patch" => "stocks:write"
+            "std:post" => "scope:stocks:write",
+            "std:patch" => "scope:stocks:write"
         ]);
     }
 }
