@@ -32,7 +32,7 @@ class OrdersController extends BaseController
      */
     public function paid(): PaginationJsonResponse
     {
-        $query = Order::query()->where("type", "=", Order::PAID);
+        $query = Order::query()->where("status", "=", Order::PAID);
 
         return new PaginationJsonResponse($query);
     }
