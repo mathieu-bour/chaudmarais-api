@@ -28,12 +28,12 @@ steps:
     args: ['build',
            '--build-arg', 'SHORT_SHA=$SHORT_SHA',
            '--build-arg', 'BRANCH_NAME=$BRANCH_NAME',
-           '-t', 'eu.gcr.io/$PROJECT_ID/chaudmarais-api:$SHORT_SHA',
+           '-t', 'eu.gcr.io/$PROJECT_ID/chaudmarais-api:$BRANCH_NAME-$SHORT_SHA',
            '.']
   - id: 'docker:push'
     waitFor: ['docker:build']
     name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'eu.gcr.io/$PROJECT_ID/chaudmarais-api:$SHORT_SHA']
+    args: ['push', 'eu.gcr.io/$PROJECT_ID/chaudmarais-api:$BRANCH_NAME-$SHORT_SHA']
   - id: 'cloud-run:deploy'
     waitFor: ['docker:push']
     name: 'gcr.io/cloud-builders/gcloud'
