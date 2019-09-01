@@ -27,6 +27,7 @@ class OrdersRegistrar extends BaseRegistrar
         });
 
         $this->rest([
+            "std:index" => "scope:orders:read",
             "std:patch" => "scope:orders:write",
             "rel:get:stocks" => "logged"
         ]);

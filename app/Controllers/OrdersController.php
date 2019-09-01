@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Exceptions\UnsupportedWebhookException;
 use App\Models\Order;
+use App\Models\Stock;
 use App\Models\User;
 use App\Services\Shop\Cart;
 use Illuminate\Http\Request;
@@ -91,6 +92,16 @@ class OrdersController extends BaseController
         $order->stripe_id = $paymentIntent->id;
         $order->user_id = $user->id;
         $order->save();
+
+        foreach ($content as $cartItem) {
+            /** @var Stock $stock */
+            $stock = $cartItem["stock"];
+            /** @var int $quantity */
+            $quantity = $cartItem["quantity"];
+
+            $stock->available_inventory -= $quantity;
+            $stock->save();
+        }
 
         return new SuccessJsonResponse($order);
     }
