@@ -16,7 +16,7 @@ done
 ENV_VARS=$(./deploy/scripts/envcat.sh ./storage/keychain/env.${BRANCH_NAME})
 
 gcloud beta run deploy chaudmarais-api-${BRANCH_NAME} \
-    --image eu.gcr.io/chaud-marais/chaudmarais-api:${SHORT_SHA} \
+    --image eu.gcr.io/chaud-marais/chaudmarais-api:${BRANCH_NAME}-${SHORT_SHA} \
     --platform=managed \
     --region=europe-west1 \
     --allow-unauthenticated \
