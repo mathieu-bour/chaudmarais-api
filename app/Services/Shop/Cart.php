@@ -7,19 +7,25 @@ namespace App\Services\Shop;
 use App\Models\Product;
 use App\Models\Stock;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 class Cart
 {
     /** @var Collection */
     private $items;
-    private $shippingPrice = 630;
+    private $shippingPrice = 250;
 
     public function __construct(array $content)
     {
         $this->items = collect($content)->map(function ($line) {
             /** @var Stock $stock */
             $stock = Stock::query()->findOrFail($line["stock_id"]);
+            /** @var Product $product */
             $product = Product::query()->findOrFail($stock->product_id);
+
+            if (Str::contains(Str::slug($product->type), "shirt")) {
+                $this->shippingPrice = 630;
+            }
 
             return [
                 "quantity" => $line["quantity"],
