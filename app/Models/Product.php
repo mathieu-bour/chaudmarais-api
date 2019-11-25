@@ -19,6 +19,7 @@ use Mathrix\Lumen\Zero\Models\BaseModel;
  * @property bool $enabled
  * @property string $name
  * @property string $slug
+ * @property string $type
  * @property string $description
  * @property string[] $image_first
  * @property string[] $images
