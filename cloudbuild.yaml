@@ -17,7 +17,7 @@ steps:
   # ---------------------------------------
   - id: 'composer:install'
     waitFor: ['gcloud:kms:decrypt']
-    name: 'gsingh1/prestissimo'
+    name: 'clevyr/prestissimo'
     entrypoint: 'deploy/scripts/composer.sh'
 
   # Build, push and deploy API image
