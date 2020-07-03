@@ -32,7 +32,7 @@ class ProductsController extends BaseController
         $this->canOrFail($request, "enabled", Product::class);
 
         // Make the Eloquent query
-        $query = Product::query()->where("enabled", "=", true);
+        $query = Product::query()->where("enabled", "=", true)->orderBy('order');
 
         return new PaginationJsonResponse($query);
     }

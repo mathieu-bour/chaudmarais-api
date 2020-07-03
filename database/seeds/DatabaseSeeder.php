@@ -35,6 +35,7 @@ class DatabaseSeeder extends BaseTableSeeder
         $client->first_name = "Jean";
         $client->last_name = "Dupont";
         $client->email = "client@chaudmarais.fr";
+        $client->password = "salome3004";
         $client->save();
     }
 }
