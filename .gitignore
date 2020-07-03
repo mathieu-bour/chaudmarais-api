@@ -1,16 +1,7 @@
 /.env
 
 # User-specific stuff:
-/.idea/php.xml
-/.idea/*.iml
-/.idea/**/workspace.xml
-/.idea/dataSources*
-/.idea/dataSources/
-/.idea/dictionaries
-/.idea/httpRequests/
-/.idea/modules.xml
-/.idea/deployment.xml
-/.idea/sqldialects.xml
+/.idea
 
 /node_modules/
 /vendor/
